@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "cpy_ABS_ASQL",
+				"name": "Import sales data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
