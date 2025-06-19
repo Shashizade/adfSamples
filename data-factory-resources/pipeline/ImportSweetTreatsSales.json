@@ -1,5 +1,5 @@
 {
-	"name": "pl_stg_to_sql",
+	"name": "ImportSweetTreatsSales",
 	"properties": {
 		"activities": [
 			{
