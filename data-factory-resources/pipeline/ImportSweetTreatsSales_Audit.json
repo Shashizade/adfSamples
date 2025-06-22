@@ -98,7 +98,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[LogPipelineExecutionv1]",
 					"storedProcedureParameters": {
 						"FilesRead": {
 							"value": {
