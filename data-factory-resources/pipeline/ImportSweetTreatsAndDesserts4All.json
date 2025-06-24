@@ -1,0 +1,31 @@
+{
+	"name": "ImportSweetTreatsAndDesserts4All",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute_ImportSTFormat",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ImportSTFormatFolder",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"WildcardFolderPath": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/SweetTreats",
+						"WildcardFileName": "*.csv"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Chapter5"
+		},
+		"annotations": []
+	}
+}
