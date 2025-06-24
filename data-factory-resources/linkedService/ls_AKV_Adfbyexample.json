@@ -1,0 +1,10 @@
+{
+	"name": "ls_AKV_Adfbyexample",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-adfbyexample2025.vault.azure.net/"
+		}
+	}
+}
