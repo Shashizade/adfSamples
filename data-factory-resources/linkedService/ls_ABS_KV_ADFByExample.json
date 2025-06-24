@@ -1,0 +1,17 @@
+{
+	"name": "ls_ABS_KV_ADFByExample",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_AKV_Adfbyexample",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "StorageAccountConnectionString"
+			}
+		}
+	}
+}
