@@ -1,0 +1,20 @@
+{
+	"name": "ABS_JSON_KV_adfbyExample",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ABS_KV_ADFByExample",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Chapter5"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation"
+			}
+		},
+		"schema": {}
+	}
+}
