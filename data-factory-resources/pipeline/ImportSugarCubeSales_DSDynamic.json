@@ -103,6 +103,8 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Container": "newsampledata",
+							"Directory": ".",
+							"File": ".",
 							"LinkedServiceConnectionSecret": "StorageAccountConnectionString"
 						}
 					}
