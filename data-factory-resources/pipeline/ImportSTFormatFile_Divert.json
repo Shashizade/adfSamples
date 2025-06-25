@@ -469,8 +469,7 @@
 				"defaultValue": -1
 			},
 			"path": {
-				"type": "Boolean",
-				"defaultValue": "-1"
+				"type": "Boolean"
 			}
 		},
 		"folder": {
