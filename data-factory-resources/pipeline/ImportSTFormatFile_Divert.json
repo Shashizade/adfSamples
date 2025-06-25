@@ -348,7 +348,7 @@
 					{
 						"activity": "Import sales data",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
