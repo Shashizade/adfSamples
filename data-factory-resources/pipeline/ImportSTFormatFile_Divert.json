@@ -428,6 +428,30 @@
 					"referenceName": "ls_AzureSqlDatabase",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Path",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Import sales data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "path",
+					"value": {
+						"value": "@join(skip(array(split(activity('Import sales data').output.logFilePath,'/' )),1),'/')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
@@ -443,6 +467,9 @@
 			"RunSeqNo": {
 				"type": "Integer",
 				"defaultValue": -1
+			},
+			"path": {
+				"type": "String"
 			}
 		},
 		"folder": {
