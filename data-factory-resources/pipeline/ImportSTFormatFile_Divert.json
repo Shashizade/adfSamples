@@ -469,8 +469,8 @@
 				"defaultValue": -1
 			},
 			"path": {
-				"type": "Integer",
-				"defaultValue": -1
+				"type": "Boolean",
+				"defaultValue": "-1"
 			}
 		},
 		"folder": {
