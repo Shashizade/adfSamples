@@ -7,15 +7,15 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Fail1",
+						"activity": "Set variable3",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "Set variable3",
+						"activity": "Fail1",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
