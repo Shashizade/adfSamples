@@ -3,23 +3,13 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Fail1",
-				"type": "Fail",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"message": "FailurePipeline Demo",
-					"errorCode": "505"
-				}
-			},
-			{
 				"name": "Set variable1",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
 						"activity": "Fail1",
 						"dependencyConditions": [
-							"Failed"
+							"Succeeded"
 						]
 					}
 				],
@@ -71,6 +61,16 @@
 						}
 					],
 					"setSystemVariable": true
+				}
+			},
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "Demo Fail",
+					"errorCode": "505"
 				}
 			}
 		],
