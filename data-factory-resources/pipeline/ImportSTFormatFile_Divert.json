@@ -448,7 +448,7 @@
 				"typeProperties": {
 					"variableName": "path",
 					"value": {
-						"value": "@int(activity('Import sales data').output.rowsSkipped)",
+						"value": "@greater(int(activity('Import sales data').output.rowsSkipped), 0)",
 						"type": "Expression"
 					}
 				}
