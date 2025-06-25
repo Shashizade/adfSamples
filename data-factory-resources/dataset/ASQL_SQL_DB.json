@@ -5,6 +5,9 @@
 			"referenceName": "ls_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Chapter6"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
