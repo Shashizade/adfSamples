@@ -146,7 +146,10 @@
 							"type": "Int32"
 						},
 						"RunStatus": {
-							"value": "Done",
+							"value": {
+								"value": "@if(equals(activity('Import sales data').output.executionDetails[0].status,'Failed'),'Failed','Done')",
+								"type": "Expression"
+							},
 							"type": "String"
 						}
 					}
