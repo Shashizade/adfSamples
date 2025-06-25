@@ -5,6 +5,8 @@
 			{
 				"name": "Import sales data",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Failed",
 				"dependsOn": [
 					{
 						"activity": "Set RunSeqNo",
