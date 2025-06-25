@@ -292,7 +292,7 @@
 					},
 					"ifTrueActivities": [
 						{
-							"name": "Copy data1",
+							"name": "Load Error Rows",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
