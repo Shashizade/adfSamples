@@ -11,6 +11,12 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
+					},
+					{
+						"activity": "Set variable3",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
 				"policy": {
@@ -71,6 +77,29 @@
 				"typeProperties": {
 					"message": "Demo Fail",
 					"errorCode": "505"
+				}
+			},
+			{
+				"name": "Set variable3",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "pipelineReturnValue",
+					"value": [
+						{
+							"key": "var3",
+							"value": {
+								"type": "String",
+								"content": "var3 value"
+							}
+						}
+					],
+					"setSystemVariable": true
 				}
 			}
 		],
