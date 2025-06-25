@@ -5,6 +5,15 @@
 			"referenceName": "ls_AzureSqlDatabase",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"SchemaName": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"TableName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "Chapter6"
 		},
@@ -43,6 +52,16 @@
 				"type": "int",
 				"precision": 10
 			}
-		]
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().SchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
 	}
 }
