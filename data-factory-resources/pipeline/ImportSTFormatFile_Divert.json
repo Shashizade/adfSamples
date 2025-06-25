@@ -340,7 +340,10 @@
 									"referenceName": "ABS_CSV",
 									"type": "DatasetReference",
 									"parameters": {
-										"Container": "output"
+										"Container": "output",
+										"Directory": ".",
+										"File": ".",
+										"LinkedServiceConnectionSecret": "."
 									}
 								}
 							],
