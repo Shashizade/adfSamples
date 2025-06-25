@@ -287,7 +287,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@bool(greater(activity('Import sales data').output.rowsSkipped, 0))",
+						"value": "@greater(int(activity('Import sales data').output.rowsSkipped),0)",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
