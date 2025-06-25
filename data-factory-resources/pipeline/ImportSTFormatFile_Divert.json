@@ -108,7 +108,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "If Condition1",
+						"activity": "If RowsSkipped",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -274,7 +274,7 @@
 				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "If RowsSkipped",
 				"type": "IfCondition",
 				"dependsOn": [
 					{
@@ -287,7 +287,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(int(activity('Import sales data').output.rowsSkipped),0)",
+						"value": "@greaterOrEquals(int(activity('Import sales data').output.rowsSkipped),1)",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
