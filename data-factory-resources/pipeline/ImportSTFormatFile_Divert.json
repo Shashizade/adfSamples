@@ -420,8 +420,8 @@
 									"referenceName": "ASQL_SQL_DB",
 									"type": "DatasetReference",
 									"parameters": {
-										"SchemaName": "[dbo]",
-										"TableName": "[LoadingError]"
+										"SchemaName": "dbo",
+										"TableName": "LoadingError"
 									}
 								}
 							]
