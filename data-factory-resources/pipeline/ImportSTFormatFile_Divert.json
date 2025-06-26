@@ -411,7 +411,7 @@
 										"Container": "output",
 										"Directory": ".",
 										"File": ".",
-										"LinkedServiceConnectionSecret": "."
+										"LinkedServiceConnectionSecret": "StorageAccountConnectionString"
 									}
 								}
 							],
