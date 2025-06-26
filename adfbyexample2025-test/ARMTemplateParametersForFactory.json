@@ -11,6 +11,15 @@
 		"ls_AzureSqlDatabase_password": {
 			"value": ""
 		},
+		"AnyBlobStorage_properties_typeProperties_connectionString_secretName": {
+			"value": "@linkedService().ConnectionSecretName"
+		},
+		"ls_ABS_KV_ADFByExample_properties_typeProperties_connectionString_secretName": {
+			"value": "StorageAccountConnectionString"
+		},
+		"ls_AKV_Adfbyexample_properties_typeProperties_baseUrl": {
+			"value": "https://kv-adfbyexample2025.vault.azure.net/"
+		},
 		"ls_AzureSqlDatabase_properties_typeProperties_server": {
 			"value": "adfbyexample2025-sql.database.windows.net"
 		},

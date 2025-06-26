@@ -15,6 +15,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_AzureSqlDatabase'"
 		},
+		"AnyBlobStorage_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "@linkedService().ConnectionSecretName"
+		},
+		"ls_ABS_KV_ADFByExample_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "StorageAccountConnectionString"
+		},
+		"ls_AKV_Adfbyexample_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-adfbyexample2025.vault.azure.net/"
+		},
 		"ls_AzureSqlDatabase_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "adfbyexample2025-sql.database.windows.net"
@@ -60,6 +72,9 @@
 					"ls_AzureSqlDatabase_password": {
 						"value": "[parameters('ls_AzureSqlDatabase_password')]"
 					},
+					"ls_AKV_Adfbyexample_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_AKV_Adfbyexample_properties_typeProperties_baseUrl')]"
+					},
 					"ls_AzureSqlDatabase_properties_typeProperties_server": {
 						"value": "[parameters('ls_AzureSqlDatabase_properties_typeProperties_server')]"
 					},
@@ -68,10 +83,36 @@
 					},
 					"ls_AzureSqlDatabase_properties_typeProperties_userName": {
 						"value": "[parameters('ls_AzureSqlDatabase_properties_typeProperties_userName')]"
+					},
+					"AnyBlobStorage_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AnyBlobStorage_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_ABS_KV_ADFByExample_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_ABS_KV_ADFByExample_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adfbyexample2025-test_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfbyexample2025-test_ArmTemplate_0')]"
+			]
 		}
 	]
 }
