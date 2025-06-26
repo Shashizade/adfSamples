@@ -1,9 +1,52 @@
 {
 	"name": "ImportSTFormatFiles",
 	"properties": {
+		"activities": [
+			{
+				"name": "Get File List",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ABS_CSV",
+						"type": "DatasetReference",
+						"parameters": {
+							"Container": "newsampledata",
+							"Directory": {
+								"value": "@pipeline().parameters.FolderPath",
+								"type": "Expression"
+							},
+							"File": " ",
+							"LinkedServiceConnectionSecret": "StorageAccountConnectionString"
+						}
+					},
+					"fieldList": [
+						"exists",
+						"itemType",
+						"itemName"
+					],
+					"storeSettings": {
+						"type": "AzureBlobStorageReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "DelimitedTextReadSettings"
+					}
+				}
+			}
+		],
 		"parameters": {
 			"FolderPath": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/NaughtyButNice"
 			}
 		},
 		"folder": {
