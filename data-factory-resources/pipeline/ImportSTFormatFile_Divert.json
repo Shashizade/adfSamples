@@ -345,9 +345,9 @@
 				"type": "IfCondition",
 				"dependsOn": [
 					{
-						"activity": "Import sales data",
+						"activity": "CallpersistLoad",
 						"dependencyConditions": [
-							"Completed"
+							"Succeeded"
 						]
 					}
 				],
@@ -431,7 +431,14 @@
 			{
 				"name": "CallpersistLoad",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Import sales data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
