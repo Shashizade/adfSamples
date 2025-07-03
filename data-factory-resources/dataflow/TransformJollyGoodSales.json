@@ -13,6 +13,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "JollyGoodSales"
+				},
+				{
+					"linkedService": {
+						"referenceName": "ls_ABS_adfbyexample",
+						"type": "LinkedServiceReference"
+					},
+					"name": "ExchangeRates"
 				}
 			],
 			"sinks": [],
@@ -33,6 +40,15 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> JollyGoodSales",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'excel',",
+				"     container: 'newsampledata',",
+				"     folderPath: 'Azure-Data-Factory-by-Example-Second-Edition-main/SampleData',",
+				"     fileName: 'ExchangeRates.xlsx',",
+				"     sheetName: 'Sheet1',",
+				"     firstRowAsHeader: true) ~> ExchangeRates",
 				"JollyGoodSales filter(Product!='Month Total') ~> FilterJollyGooodsRecords"
 			]
 		}
