@@ -18,7 +18,8 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "FilterJollyGooodsRecors"
+					"name": "FilterJollyGooodsRecords",
+					"description": "Filtering rows using expressions on columns 'Product' to remove month total records"
 				}
 			],
 			"scriptLines": [
@@ -32,7 +33,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> JollyGoodSales",
-				"JollyGoodSales filter(Product!='Month Total') ~> FilterJollyGooodsRecors"
+				"JollyGoodSales filter(Product!='Month Total') ~> FilterJollyGooodsRecords"
 			]
 		}
 	}
