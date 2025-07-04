@@ -32,7 +32,7 @@
 					"name": "RatesToUSD"
 				},
 				{
-					"name": "RateLookUp"
+					"name": "LookUpExchangeRate"
 				}
 			],
 			"scriptLines": [
@@ -66,7 +66,7 @@
 				"FilterJollyGooodsRecords, RatesToUSD lookup(Currency == FromCurrency",
 				"     && Period == Date,",
 				"     multiple: true,",
-				"     broadcast: 'auto')~> RateLookUp"
+				"     broadcast: 'auto')~> LookUpExchangeRate"
 			]
 		}
 	}
