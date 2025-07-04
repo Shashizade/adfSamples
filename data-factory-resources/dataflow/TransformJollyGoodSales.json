@@ -46,7 +46,7 @@
 					"name": "DerivedSalesValueUSD"
 				},
 				{
-					"name": "select1"
+					"name": "PrepareSinkSelect"
 				}
 			],
 			"scriptLines": [
@@ -97,8 +97,8 @@
 				"          RunSeqNo",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true) ~> PrepareSinkSelect",
+				"PrepareSinkSelect sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          RowId as integer,",
