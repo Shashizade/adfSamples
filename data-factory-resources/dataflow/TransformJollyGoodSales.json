@@ -30,6 +30,9 @@
 				},
 				{
 					"name": "RatesToUSD"
+				},
+				{
+					"name": "RateLookUp"
 				}
 			],
 			"scriptLines": [
@@ -59,7 +62,11 @@
 				"     sheetName: 'Sheet1',",
 				"     firstRowAsHeader: true) ~> ExchangeRates",
 				"JollyGoodSales filter(Product!='Month Total') ~> FilterJollyGooodsRecords",
-				"ExchangeRates filter(ToCurrency=='USD') ~> RatesToUSD"
+				"ExchangeRates filter(ToCurrency=='USD') ~> RatesToUSD",
+				"FilterJollyGooodsRecords, RatesToUSD lookup(Currency == FromCurrency",
+				"     && Period == Date,",
+				"     multiple: true,",
+				"     broadcast: 'auto')~> RateLookUp"
 			]
 		}
 	}
