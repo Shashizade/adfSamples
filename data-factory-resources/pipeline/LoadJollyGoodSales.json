@@ -1,0 +1,47 @@
+{
+	"name": "LoadJollyGoodSales",
+	"properties": {
+		"activities": [
+			{
+				"name": "LookupSeqNo",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[dbo].[LogPipelineStartv1]",
+						"storedProcedureParameters": {
+							"Comments": {
+								"type": "String"
+							},
+							"PipelineRunId": {
+								"type": "Guid"
+							},
+							"RunStartDateTime": {
+								"type": "DateTime"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ASQL_dboSalesLoad",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Chapter7"
+		},
+		"annotations": []
+	}
+}
