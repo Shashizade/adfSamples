@@ -86,6 +86,42 @@
 					},
 					"traceLevel": "Fine"
 				}
+			},
+			{
+				"name": "sp_PersistData",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "TransformJollyGoodSales",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[PersistLoadedSales]",
+					"storedProcedureParameters": {
+						"runSeqNo": {
+							"value": {
+								"value": "@activity('LookupSeqNo').output",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_AzureSqlDatabase",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"folder": {
