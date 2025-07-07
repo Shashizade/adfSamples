@@ -154,14 +154,14 @@
 						},
 						"RowsCopied": {
 							"value": {
-								"value": "@activity('TransformJollyGoodSales').output.sources.ExchangeRates.rowsRead",
+								"value": "@activity('TransformJollyGoodSales').output.runStatus.metrics.SinkToSalesLoad.rowsWritten\n\n",
 								"type": "Expression"
 							},
 							"type": "Int32"
 						},
 						"RowsRead": {
 							"value": {
-								"value": "@activity('TransformJollyGoodSales').output.JollyGoodSales.sources.rowsRead",
+								"value": "@activity('TransformJollyGoodSales').output.runStatus.metrics.SinkToSalesLoad.rowsWritten",
 								"type": "Expression"
 							},
 							"type": "Int32"
