@@ -147,17 +147,23 @@
 					"storedProcedureParameters": {
 						"FilesRead": {
 							"value": {
-								"value": "@activity('LookupSeqNo').output.firstRow",
+								"value": "@activity('LookupSeqNo').output.firstRow.RunSeqNo\n",
 								"type": "Expression"
 							},
 							"type": "Int32"
 						},
 						"RowsCopied": {
-							"value": null,
+							"value": {
+								"value": "@activity('TransformJollyGoodSales').output.ExchangeRates.rowsRead",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RowsRead": {
-							"value": null,
+							"value": {
+								"value": "@activity('TransformJollyGoodSales').output.JollyGoodSales.rowsRead",
+								"type": "Expression"
+							},
 							"type": "Int32"
 						},
 						"RunEndDateTime": {
@@ -175,7 +181,7 @@
 							"type": "Int32"
 						},
 						"RunStatus": {
-							"value": null,
+							"value": "done",
 							"type": "String"
 						}
 					}
