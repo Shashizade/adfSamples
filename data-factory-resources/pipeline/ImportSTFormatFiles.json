@@ -83,7 +83,7 @@
 										"type": "Expression"
 									},
 									"File": {
-										"value": "@activity('Get File List').output.itemName",
+										"value": "@item().name",
 										"type": "Expression"
 									}
 								}
