@@ -36,6 +36,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -60,6 +61,7 @@
 						"value": "@activity('Get File List').output.childItems",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "LoadFile",
@@ -94,7 +96,7 @@
 		"parameters": {
 			"FolderPath": {
 				"type": "string",
-				"defaultValue": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/NaughtyButNice"
+				"defaultValue": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/Desserts4All"
 			}
 		},
 		"folder": {
