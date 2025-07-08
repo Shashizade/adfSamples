@@ -147,7 +147,7 @@
 					"storedProcedureParameters": {
 						"FilesRead": {
 							"value": {
-								"value": "@activity('LookupSeqNo').output.firstRow.RunSeqNo\n",
+								"value": "@activity('TransformJollyGoodSales').output.runStatus.metrics.SinkToSalesLoad.rowsWritten\n",
 								"type": "Expression"
 							},
 							"type": "Int32"
@@ -175,7 +175,7 @@
 						},
 						"RunSeqNo": {
 							"value": {
-								"value": "@activity('LookupSeqNo').output",
+								"value": "@activity('LookupSeqNo').output.firstRow.RunSeqNo\n",
 								"type": "Expression"
 							},
 							"type": "Int32"
