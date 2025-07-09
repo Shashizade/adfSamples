@@ -35,7 +35,7 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> dboSales",
-				"dboSales derive(ProductName = length(:WeightString),",
+				"dboSales derive(ProductName = trim(left(Product,length(Product)-length(:WeightString))),",
 				"          WeightInOunces = toFloat(replace(:WeightString,:WeightUnit, '')) / iif(:WeightUnit=='g',28.3495, 1.0),",
 				"          WeightInGrams = toFloat(replace(:WeightString,:WeightUnit, '')) / iif(:WeightUnit=='g',28.3495, 1.0),",
 				"          WeightString := right(Product, locate(' ', reverse(Product), -1)),",
