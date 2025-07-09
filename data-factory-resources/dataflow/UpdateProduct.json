@@ -35,7 +35,7 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> dboSales",
-				"dboSales derive(ProductName = locate(' ', Product,0),",
+				"dboSales derive(ProductName = right(Product, locate(' ', Product,0)),",
 				"          WeightString := locate(' ',Product, -1),",
 				"          WeightUnit := iif(endsWith(Product,'oz'), 'oz', 'g')) ~> derivedColumn1"
 			]
