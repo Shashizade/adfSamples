@@ -94,7 +94,7 @@
 							"recursive": true,
 							"wildcardFolderPath": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/NaughtyButNice",
 							"wildcardFileName": {
-								"value": "@activity('Filter1').output",
+								"value": "@activity('Filter1').output.Value.name",
 								"type": "Expression"
 							},
 							"enablePartitionDiscovery": false
@@ -104,9 +104,14 @@
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false
@@ -119,7 +124,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_abs_adfbyexample_sample",
+						"referenceName": "ABS_CSV",
 						"type": "DatasetReference"
 					}
 				]
