@@ -1,0 +1,23 @@
+{
+	"name": "ds_getabs_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AnyBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/NaughtyButNice",
+				"container": "newsampledata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
