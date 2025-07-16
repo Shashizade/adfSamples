@@ -17,7 +17,21 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "UpdateProduct",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"dboSales": {
+								"SchemaName": "dbo",
+								"TableName": "sales"
+							},
+							"dboProductSource": {
+								"SchemaName": "dbo",
+								"TableName": "product"
+							},
+							"dboProductSink": {
+								"SchemaName": "dbo",
+								"TableName": "Product"
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
