@@ -28,7 +28,7 @@
 						"referenceName": "ASQL_SQL_DB",
 						"type": "DatasetReference"
 					},
-					"name": "dboSink"
+					"name": "dboProductSink"
 				}
 			],
 			"transformations": [
@@ -73,7 +73,7 @@
 				"          WeightUnit := iif(endsWith(Product,'oz'), 'oz', 'g')) ~> DerivedProductData",
 				"DerivedProductData aggregate(groupBy(Product),",
 				"     ProductName = first(ProductName),",
-				"          each(match(startsWith(name, 'Weight')), $$ = first($$))) ~> aggregate1",
+				"          each(match(startsWith(name,'Weight')), $$ = first($$))) ~> aggregate1",
 				"aggregate1, dboProductSource exists(aggregate1@Product == dboProductSource@Product,",
 				"     negate:true,",
 				"     broadcast: 'auto')~> newRowsOnly",
@@ -95,7 +95,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> dboSink"
+				"     errorHandlingOption: 'stopOnFirstError') ~> dboProductSink"
 			]
 		}
 	}
