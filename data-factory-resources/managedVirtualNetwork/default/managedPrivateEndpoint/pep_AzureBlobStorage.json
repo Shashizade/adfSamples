@@ -1,0 +1,7 @@
+{
+	"name": "pep_AzureBlobStorage",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/1d3af4c8-e28f-4796-860e-0f283193184f/resourceGroups/rg-sz-adf/providers/Microsoft.Storage/storageAccounts/adfexamplestg",
+		"groupId": "blob"
+	}
+}
